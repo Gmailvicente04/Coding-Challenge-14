@@ -43,3 +43,35 @@ function highlightHighPriorityTickets() {
 document.getElementById("ticketContainer").addEventListener("click", function() {
     console.log("A ticket was clicked!");
 });
+
+// Task 5: Inline Editing of Support Tickets
+function enableInlineEditing(ticket) {
+    ticket.addEventListener("dblclick", function() {
+        const name = ticket.querySelector("h3").textContent;
+        const issue = ticket.querySelector("p").textContent;
+        const priority = ticket.querySelector("span").textContent.replace("Priority: ", "");
+        
+        ticket.innerHTML = "";
+        
+        const nameInput = document.createElement("input");
+        nameInput.value = name;
+        
+        const issueInput = document.createElement("input");
+        issueInput.value = issue;
+        
+        const priorityInput = document.createElement("input");
+        priorityInput.value = priority;
+        
+        const saveButton = document.createElement("button");
+        saveButton.textContent = "Save";
+        saveButton.addEventListener("click", function() {
+            ticket.innerHTML = "";
+            addSupportTicket(nameInput.value, issueInput.value, priorityInput.value);
+        });
+        
+        ticket.appendChild(nameInput);
+        ticket.appendChild(issueInput);
+        ticket.appendChild(priorityInput);
+        ticket.appendChild(saveButton);
+    });
+}
