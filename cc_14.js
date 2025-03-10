@@ -30,3 +30,12 @@ function addSupportTicket(name, issue, priority) {
     
     ticketContainer.appendChild(ticket);
 }
+
+// Task 3: Highlighting High Priority Tickets
+function highlightHighPriorityTickets() {
+    const highPriorityTickets = Array.from(document.querySelectorAll(".high"));
+    highPriorityTickets.forEach(ticket => {
+        ticket.style.backgroundColor = "red";
+        ticket.style.color = "white";
+    });
+}
