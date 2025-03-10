@@ -43,7 +43,7 @@ function highlightHighPriorityTickets() {
 }
 highlightHighPriorityTickets(); // Applying highlight after adding tickets
 
-    // Task 5 - Creating an edit button
+    // - Creating an edit button
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
     editButton.addEventListener("click", (event) => {
@@ -66,7 +66,7 @@ addSupportTicket("Payton Pritchard", "Password reset not working", "High");
 
 
 
-// Implementing Ticket Resolution with Event Bubbling
+// Task 4 Implementing Ticket Resolution with Event Bubbling
 // Selecting the ticket container 
 const ticketContainer = document.getElementById('ticketContainer'); 
 
